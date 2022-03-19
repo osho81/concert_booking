@@ -5,6 +5,7 @@ import entity.Booking;
 import entity.Concert;
 import entity.Customer;
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 // Class for managing booking related db actions via Hibernate/entityManager
@@ -22,25 +23,27 @@ public class DatabaseBooking {
             transaction.begin();
 
             // Retrieve and display available concerts
-            System.out.println("\nLooking fo concerts anywhere or in a specific city?");
+            System.out.println("\nLooking for comming concerts anywhere or in a specific city?");
             System.out.println("1. Anywhere\n2. Specific city");
             int chosenScope = Main.scan.nextInt();
 
             if (chosenScope == 1) {
-                // Retrieve all concerts with "native sql" using entityManager
-                Query query = entityManager.createNativeQuery("SELECT * FROM Concert c");
-                List<Object[]> concertObject = query.getResultList(); // Could also use toString in entity-classes
+                // Retrieve all coming (non-passed) concerts with "native sql" using entityManager
+                Query query = entityManager.createNativeQuery("SELECT * FROM Concert c WHERE c.concert_date > :p");
+                query.setParameter("p", java.time.LocalDate.now()); // Disregard passed concerts
+                List<Object[]> concertObject = query.getResultList();
                 for (Object[] c : concertObject)
                     System.out.println(c[0] + "\t" + c[1] + "\t\t" + c[2] + "\t" + c[3] + "\t" + c[4]);
 
             } else if (chosenScope == 2) {
-                // Retrieve all concerts in a specific city
+                // Retrieve all coming (non-passed) concerts concerts in a specific city
                 System.out.println("\nEnter city name");
                 String chosenCity = Main.scan.next();
                 Query query = entityManager.createNativeQuery("SELECT * FROM Concert c JOIN Arena a on c.concert_arena = a.arena_id " +
-                        "JOIN Address ad on a.arena_address = ad.address_id WHERE ad.city = :p");
-                query.setParameter("p", chosenCity); // "Placeholder"
-                List<Object[]> concertObject = query.getResultList(); // Could also use toString in entity-classes
+                        "JOIN Address ad on a.arena_address = ad.address_id WHERE ad.city = :p AND c.concert_date > :d");
+                query.setParameter("p", chosenCity); // Scope to chosen city
+                query.setParameter("d", java.time.LocalDate.now()); // Disregard passed concerts
+                List<Object[]> concertObject = query.getResultList();
                 for (Object[] c : concertObject)
                     System.out.println(c[0] + "\t" + c[1] + "\t\t" + c[2] + "\t" + c[3] + "\t" + c[4]);
             } else {
