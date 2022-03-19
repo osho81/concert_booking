@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="default"> <!-- this unit name is referenced to in appLogic.Main.java -->
+
+    <!--Configuration xml file for EntityManager (JPA standard)-->
+
+        <class>entity.Address</class>
+        <class>entity.Arena</class>
+        <class>entity.Concert</class>
+        <class>entity.Customer</class>
+        <class>entity.Booking</class>
+
+        <properties>
+            <!--Driver för databasen -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+
+            <!-- Url till databasen -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/wigellsconcert?serverTimezone=UTC"/> <!-- Url till databasen -->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="temporary123"/>
+            <property name="hibernate.show_sql" value="false"/> <!-- Skriver (inte) ut query i konsolen -->
+
+        </properties>
+    </persistence-unit>
+</persistence>
