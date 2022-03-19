@@ -18,10 +18,10 @@
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 
             <!-- Url to database -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/wigellsconcert?serverTimezone=UTC"/> <!-- Url till databasen -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/wigellsconcert?serverTimezone=UTC"/> <!-- Url till db -->
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="temporary123"/>
-            <property name="hibernate.show_sql" value="false"/> <!-- (Don't) display query in console -->
+            <property name="javax.persistence.jdbc.password" value="temporary123"/> <!-- Enter db password -->
+            <property name="hibernate.show_sql" value="false"/> <!-- Display or don't display query in console -->
 
         </properties>
     </persistence-unit>
