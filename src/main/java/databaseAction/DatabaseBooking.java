@@ -1,4 +1,4 @@
-package DatabaseAction;
+package databaseAction;
 
 import appLogic.Main;
 import entity.Booking;

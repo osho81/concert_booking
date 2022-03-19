@@ -1,4 +1,4 @@
-package DatabaseAction;
+package databaseAction;
 
 import appLogic.Main;
 import entity.*;
@@ -63,13 +63,11 @@ public class DatabaseAdding {
             chosenCity += Main.scan.nextLine();
 
             Address address = new Address(chosenStreet, chosenHouseNo, chosenPostalCode, chosenCity);
-            // (Could here check if identical address already and retrieve address_id instead)
             entityManager.persist(address);
 
-            // Create customer, using user chosen information and address, and the created date/birthday
+            // Create customer, using user input info, created address and date/birthday
             Customer customer = new Customer(chosenFirstName, chosenLastName, birthday, chosenPhoneNo, address.getAddressId());
             entityManager.persist(customer);
-
 
             transaction.commit();
 

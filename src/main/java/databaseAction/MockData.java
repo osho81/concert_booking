@@ -1,4 +1,4 @@
-package DatabaseAction;
+package databaseAction;
 
 import entity.Address;
 import entity.Arena;
@@ -34,7 +34,7 @@ public class MockData {
             java.sql.Date birthday1 = new java.sql.Date(dateFormat.parse("1970-01-01").getTime());
 
             // Create address for address table, to add to this customer (FK)
-            Address address1 = new Address("appLogic.Main street", "10", "12345", "London");
+            Address address1 = new Address("Main street", "10", "12345", "London");
             entityManager.persist(address1);
 
             // Create customer, using created date/birthday and address

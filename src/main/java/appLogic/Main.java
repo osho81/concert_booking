@@ -1,6 +1,6 @@
 package appLogic;
 
-import DatabaseAction.*;
+import databaseAction.*;
 import java.util.Scanner;
 
 // appLogic.Main menu class, orchestrating the application logic
