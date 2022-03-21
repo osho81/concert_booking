@@ -26,7 +26,7 @@ public class Concert {
     private int concertArena;
     @ManyToOne
     @JoinColumn(name = "concert_arena", referencedColumnName = "arena_id", nullable = false, insertable = false, updatable = false)
-    private Arena arenaByConcertArena; // Added insert=false, update=false
+    private Arena arenaByConcertArena;
 
     // Default constructor
     public Concert() {
@@ -80,6 +80,14 @@ public class Concert {
         this.concertArena = concertArena;
     }
 
+    public Arena getArenaByConcertArena() {
+        return arenaByConcertArena;
+    }
+
+    public void setArenaByConcertArena(Arena arenaByConcertArena) {
+        this.arenaByConcertArena = arenaByConcertArena;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,11 +101,4 @@ public class Concert {
         return Objects.hash(concertId, artist, concertDate, ticketPrice, concertArena);
     }
 
-    public Arena getArenaByConcertArena() {
-        return arenaByConcertArena;
-    }
-
-    public void setArenaByConcertArena(Arena arenaByConcertArena) {
-        this.arenaByConcertArena = arenaByConcertArena;
-    }
 }

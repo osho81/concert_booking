@@ -28,7 +28,7 @@ public class Customer {
     private Integer customerAddress;
     @ManyToOne
     @JoinColumn(name = "customer_address", referencedColumnName = "address_id", insertable = false, updatable = false)
-    private Address addressByCustomerAddress; // Added insert=false, update=false
+    private Address addressByCustomerAddress;
 
     // Default constructor
     public Customer() {

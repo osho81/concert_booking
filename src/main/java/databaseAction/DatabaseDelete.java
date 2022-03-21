@@ -11,7 +11,7 @@ public class DatabaseDelete {
 
     public void deleteData() {
         System.out.println("What to edit/update:");
-        System.out.println("1. Remove record/row\n2. Empty/truncate table");
+        System.out.println("1. Remove record\n2. Empty table");
         int userChoice = Main.validateUserIntegerChoice(2);
         switch (userChoice) {
             case 1 -> removeRecord();
@@ -92,11 +92,11 @@ public class DatabaseDelete {
             switch (userChoice) {
                 case 1 -> {
                     Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-                    disableConstraint.executeUpdate();
+                    disableConstraint.executeUpdate(); // Disable constraint check
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Booking");
-                    query.executeUpdate();
+                    query.executeUpdate(); // Execute
                     Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-                    enableConstraint.executeUpdate();
+                    enableConstraint.executeUpdate(); // Enable constraint check
                 }
                 case 2 -> {
                     Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");

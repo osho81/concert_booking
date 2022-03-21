@@ -231,8 +231,8 @@ public class DatabaseUpdate {
                     chosenArena.setArenaAddress(tempID);
                 }
                 case 3 -> {
-                    System.out.println("Is an outside arena is currently set to  \"" + chosenArena.getOutside() + "\"");
-                    System.out.println("Enter new answer (only \"yes\" or \"no\" are possible)");
+                    System.out.println("Indoor or outdoor is set to  \"" + chosenArena.getOutside() + "\"");
+                    System.out.println("Enter new value (only \"indoor\" or \"outdoor\" is possible)");
                     String tempStr = Main.scan.next();
                     chosenArena.setOutside(tempStr);
                 }

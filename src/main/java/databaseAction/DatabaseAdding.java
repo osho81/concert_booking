@@ -21,12 +21,12 @@ public class DatabaseAdding {
 
     public void addData() {
         System.out.println("What to add:");
-        System.out.println("1. Booking\n2. Customer");
+        System.out.println("1. Customer\n2. Concert");
         int userChoice = Main.validateUserIntegerChoice(2);
         if (userChoice == 1)
-            addConcert();
-        else if (userChoice == 2)
             addCustomer();
+        else if (userChoice == 2)
+            addConcert();
     }
 
     public void addCustomer() {
@@ -102,8 +102,8 @@ public class DatabaseAdding {
             // Find arena ID by chosen arena name
             Query query = entityManager.createNativeQuery("SELECT * FROM Arena a WHERE a.arena_name = ?1");
             query.setParameter(1, chosenArenaName);
-            List<Object[]> arenaObject = query.getResultList(); // List of arena-objects with provided arena name
-            int chosenArenaID = (int) arenaObject.get(0)[0]; // Access any of the arenas (refer to same arena ID)
+            List<Object[]> arenaObject = query.getResultList(); // List of arena-object-arrays matching provided name
+            int chosenArenaID = arenaObject.size() == 0 ? 0 : (int) arenaObject.get(0)[0]; // if result is empty, assign 0
 
             // Format and create date for customer birthdate
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -111,9 +111,14 @@ public class DatabaseAdding {
             String chosenConcertDate = Main.scan.next(); // Parse this date input into chosen format
             java.sql.Date concertDate = new java.sql.Date(dateFormat.parse(chosenConcertDate).getTime());
 
-            // Create concert, using user chosen information, found arena ID (fk), and the created concert date
+            // Create concert, using user provided info, date and arena
             Concert concert = new Concert(chosenArtist, concertDate, BigInteger.valueOf(chosenPrice), chosenArenaID);
-            entityManager.persist(concert);
+
+            Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
+            disableConstraint.executeUpdate(); // Disable constraint check (because of eventual 0 as arena-ID)
+            entityManager.persist(concert); // Execute persistence
+            Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
+            enableConstraint.executeUpdate(); // Enable constraint check
 
             transaction.commit();
 

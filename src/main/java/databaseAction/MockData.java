@@ -66,37 +66,37 @@ public class MockData {
             /////----------- Creates 5 mock ARENAS including ADDRESS -----------/////
             Address address5 = new Address("Some street", "5", "98765", "Cairo");
             entityManager.persist(address5);
-            Arena arena1 = new Arena("appLogic.Main arena", address5.getAddressId(), "no");
+            Arena arena1 = new Arena("Main arena", address5.getAddressId(), "indoor");
             entityManager.persist(arena1);
 
             Address address6 = new Address("Big street", "7", "87654", "Dubai");
             entityManager.persist(address6); // These two arenas have same address
-            Arena arena2 = new Arena("Big arena", address6.getAddressId(), "no");
+            Arena arena2 = new Arena("Big arena", address6.getAddressId(), "indoor");
             entityManager.persist(arena2);
-            Arena arena3 = new Arena("Amazing arena", address6.getAddressId(), "yes");
+            Arena arena3 = new Arena("Amazing arena", address6.getAddressId(), "outdoor");
             entityManager.persist(arena3);
 
             Address address7 = new Address("Awsome street", "7", "76543", "Stockholm");
             entityManager.persist(address7); // These two arenas have same address
-            Arena arena4 = new Arena("Fantastic arena", address7.getAddressId(), "yes");
+            Arena arena4 = new Arena("Fantastic arena", address7.getAddressId(), "outdoor");
             entityManager.persist(arena4);
-            Arena arena5 = new Arena("Bombastic arena", address7.getAddressId(), "yes");
+            Arena arena5 = new Arena("Bombastic arena", address7.getAddressId(), "indoor");
             entityManager.persist(arena5);
 
             /////----------- Creates 5 mock CONCERTS -----------/////
             java.sql.Date concertDate1 = new java.sql.Date(dateFormat.parse("2023-02-02").getTime());
             Concert concert1 = new Concert("Micheal Jackson", concertDate1, BigInteger.valueOf(500), arena5.getArenaId());
             entityManager.persist(concert1);
-            java.sql.Date concertDate2 = new java.sql.Date(dateFormat.parse("2023-03-03").getTime());
+            java.sql.Date concertDate2 = new java.sql.Date(dateFormat.parse("2022-03-03").getTime());
             Concert concert2 = new Concert("Metallica", concertDate2, BigInteger.valueOf(600), arena4.getArenaId());
             entityManager.persist(concert2);
-            java.sql.Date concertDate3 = new java.sql.Date(dateFormat.parse("2023-04-04").getTime());
+            java.sql.Date concertDate3 = new java.sql.Date(dateFormat.parse("2022-10-04").getTime());
             Concert concert3 = new Concert("Assala Nasri", concertDate3, BigInteger.valueOf(700), arena3.getArenaId());
             entityManager.persist(concert3);
-            java.sql.Date concertDate4 = new java.sql.Date(dateFormat.parse("2023-05-05").getTime());
+            java.sql.Date concertDate4 = new java.sql.Date(dateFormat.parse("2022-03-15").getTime());
             Concert concert4 = new Concert("Kadim Al Sahir", concertDate4, BigInteger.valueOf(800), arena2.getArenaId());
             entityManager.persist(concert4);
-            java.sql.Date concertDate5 = new java.sql.Date(dateFormat.parse("2023-06-06").getTime());
+            java.sql.Date concertDate5 = new java.sql.Date(dateFormat.parse("2023-01-01").getTime());
             Concert concert5 = new Concert("Cheb Khaled", concertDate5, BigInteger.valueOf(900), arena1.getArenaId());
             entityManager.persist(concert5);
 

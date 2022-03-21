@@ -17,11 +17,11 @@ public class Arena {
     @Column(name = "arena_address")
     private Integer arenaAddress;
     @Basic
-    @Column(name = "outside")
+    @Column(name = "indoor_outdoor")
     private String outside;
     @ManyToOne
     @JoinColumn(name = "arena_address", referencedColumnName = "address_id", insertable = false, updatable = false)
-    private Address addressByArenaAddress; // Added insert=false, update=false
+    private Address addressByArenaAddress;
 
     // Default constructor
     public Arena() {

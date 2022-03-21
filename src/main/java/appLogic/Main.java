@@ -51,6 +51,7 @@ public class Main {
         System.out.println("4: Display data");
         System.out.println("5: Update data");
         System.out.println("6: Delete data or empty tables");
+        System.out.println("7: Quit");
     }
 
     // Validate input action choice
