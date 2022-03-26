@@ -5,7 +5,6 @@ import entity.Booking;
 import entity.Concert;
 import entity.Customer;
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 // Class for managing booking related db actions via Hibernate/entityManager
