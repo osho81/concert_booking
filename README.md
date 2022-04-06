@@ -12,10 +12,9 @@ Simulating concert booking system, with persistent database storage.
 - JPA
 - JDBC
 - Java
-- MySQL
-- MySQL-Workbench
+- MySQL (& MySql-Workbench)
 
 #### Purpose/Motivation 
-To improve skills in database related (java) frameworks. 
+Improve skills in database related (java) frameworks. 
 
 
