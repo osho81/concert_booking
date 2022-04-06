@@ -63,6 +63,10 @@ public class MockData {
             Customer customer5 = new Customer("Jackie", "Chan", birthday5, "0700222555", address4.getAddressId());
             entityManager.persist(customer5);
 
+            java.sql.Date birthday6 = new java.sql.Date(dateFormat.parse("1951-09-02").getTime()); // Fifth customer
+            Customer customer6 = new Customer("Jackie", "Junior", birthday5, "0700222555", address4.getAddressId());
+            entityManager.persist(customer6);
+
             /////----------- Creates 5 mock ARENAS including ADDRESS -----------/////
             Address address5 = new Address("Some street", "5", "98765", "Cairo");
             entityManager.persist(address5);
