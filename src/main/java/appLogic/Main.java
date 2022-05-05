@@ -36,7 +36,7 @@ public class Main {
                 case 5 -> dbUpdate.updateData();
                 case 6 -> dbDelete.deleteData();
                 case 7 -> {
-                    System.out.println("Closing Wigells Concert application");
+                    System.out.println("Closing Wigells Concert System");
                     System.exit(0);
                 }
             }
@@ -51,7 +51,7 @@ public class Main {
         System.out.println("4: Display data");
         System.out.println("5: Update data");
         System.out.println("6: Delete data or empty tables");
-        System.out.println("7: Quit");
+        System.out.println("7: Exit system");
     }
 
     // Validate input action choice
