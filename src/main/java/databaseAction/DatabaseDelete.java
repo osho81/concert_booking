@@ -87,8 +87,13 @@ public class DatabaseDelete {
             transaction.begin();
 
             // Move out all disables/enables from all cases in switch
+            // Put the disable here
 //            Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
 //            disableConstraint.executeUpdate(); // Disable constraint check
+
+            // and put the enable again after the swicth
+//            Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
+//            enableConstraint.executeUpdate(); // Enable constraint check
 
             System.out.println("Which table to empty/truncate?");
             System.out.println("1. Booking\n2. Customer\n3. Concert\n4. Arena\n5. Address\n6. All tables (Warning: all db content will be removed)");
