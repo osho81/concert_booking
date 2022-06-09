@@ -127,20 +127,20 @@ public class DatabaseDelete {
 //                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Arena");
                     query.executeUpdate();
-                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-                    enableConstraint.executeUpdate();
+//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
+//                    enableConstraint.executeUpdate();
                 }
                 case 5 -> {
-                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-                    disableConstraint.executeUpdate();
+//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
+//                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Address");
                     query.executeUpdate();
-                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-                    enableConstraint.executeUpdate();
+//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
+//                    enableConstraint.executeUpdate();
                 }
                 case 6 -> {
-                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-                    disableConstraint.executeUpdate();
+//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
+//                    disableConstraint.executeUpdate();
                     Query query1 = entityManager.createNativeQuery("TRUNCATE TABLE Booking");
                     query1.executeUpdate();
                     Query query2 = entityManager.createNativeQuery("TRUNCATE TABLE Customer");
@@ -151,8 +151,8 @@ public class DatabaseDelete {
                     query4.executeUpdate();
                     Query query5 = entityManager.createNativeQuery("TRUNCATE TABLE Address");
                     query5.executeUpdate();
-                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-                    enableConstraint.executeUpdate();
+//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
+//                    enableConstraint.executeUpdate();
                 }
                 default -> System.out.println("Going back to main menu");
             }
