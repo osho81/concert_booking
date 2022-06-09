@@ -86,8 +86,8 @@ public class DatabaseDelete {
             transaction = entityManager.getTransaction();
             transaction.begin();
 
-            // Comment out all disables/enables from all cases inside switch
-            // Put the disable here
+            // Removed all disables/enables checks from each case in switch, but left as comment in first case
+            // And put the "disable check" here, and re-enable after the switch
             Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
             disableConstraint.executeUpdate(); // Disable constraint check
 
@@ -157,7 +157,7 @@ public class DatabaseDelete {
                 default -> System.out.println("Going back to main menu");
             }
 
-            // and put the enable again after the swicth
+            // See comments above the switch
             Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
             enableConstraint.executeUpdate(); // Enable constraint check
 
