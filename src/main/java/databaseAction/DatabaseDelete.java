@@ -86,13 +86,11 @@ public class DatabaseDelete {
             transaction = entityManager.getTransaction();
             transaction.begin();
 
-            // Removed all disables/enables checks from each case in switch, but left as comment in first case
-            // And put the "disable check" here, and re-enable after the switch
+            ////////// SOON REMOVE all disables/enables checks from each case in switch, but LEAVE AS comment in first case ///////////
+
+            // "disable check" here before switch, and re-enable after the switch
             Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
             disableConstraint.executeUpdate(); // Disable constraint check
-
-
-            // check if above idea works, nut later try to fix the issue with cascade in mysql workbench
 
             System.out.println("Which table to empty/truncate?");
             System.out.println("1. Booking\n2. Customer\n3. Concert\n4. Arena\n5. Address\n6. All tables (Warning: all db content will be removed)");
