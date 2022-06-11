@@ -86,9 +86,7 @@ public class DatabaseDelete {
             transaction = entityManager.getTransaction();
             transaction.begin();
 
-            ////////// SOON REMOVE all disables/enables checks from each case in switch, but LEAVE AS comment in first case ///////////
-
-            // "disable check" here before switch, and re-enable after the switch
+            // disable check here before switch, and re-enable after the switch
             Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
             disableConstraint.executeUpdate(); // Disable constraint check
 
@@ -105,40 +103,22 @@ public class DatabaseDelete {
 //                    enableConstraint.executeUpdate(); // Enable constraint check
                 }
                 case 2 -> {
-//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-//                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Customer");
                     query.executeUpdate();
-//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-//                    enableConstraint.executeUpdate();
                 }
                 case 3 -> {
-//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-//                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Concert");
                     query.executeUpdate();
-//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-//                    enableConstraint.executeUpdate();
                 }
                 case 4 -> {
-//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-//                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Arena");
                     query.executeUpdate();
-//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-//                    enableConstraint.executeUpdate();
                 }
                 case 5 -> {
-//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-//                    disableConstraint.executeUpdate();
                     Query query = entityManager.createNativeQuery("TRUNCATE TABLE Address");
                     query.executeUpdate();
-//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-//                    enableConstraint.executeUpdate();
                 }
                 case 6 -> {
-//                    Query disableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0");
-//                    disableConstraint.executeUpdate();
                     Query query1 = entityManager.createNativeQuery("TRUNCATE TABLE Booking");
                     query1.executeUpdate();
                     Query query2 = entityManager.createNativeQuery("TRUNCATE TABLE Customer");
@@ -149,8 +129,6 @@ public class DatabaseDelete {
                     query4.executeUpdate();
                     Query query5 = entityManager.createNativeQuery("TRUNCATE TABLE Address");
                     query5.executeUpdate();
-//                    Query enableConstraint = entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1");
-//                    enableConstraint.executeUpdate();
                 }
                 default -> System.out.println("Going back to main menu");
             }
