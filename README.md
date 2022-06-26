@@ -15,7 +15,7 @@ Simulating concert booking system, with persistent database storage.
 - MySQL 
 - MySql-Workbench
 
-#### Purpose/Motivation 
+### Purpose/Motivation 
 Improve skills in database related (java) frameworks. 
 
 
