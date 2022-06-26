@@ -18,4 +18,7 @@ Simulating concert booking system, with persistent database storage.
 #### Purpose/Motivation 
 Improve skills in database related (java) frameworks. 
 
+## TODO
+- New/upgraded bank app using Spring framework(s)
+
 
