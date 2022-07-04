@@ -10,7 +10,6 @@ Simulating concert booking system, with persistent database storage.
 ### Techs & languages used
 - Hibernate
 - JPA
-- JDBC
 - Java
 - MySQL 
 - MySql-Workbench
