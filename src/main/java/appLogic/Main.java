@@ -63,7 +63,7 @@ public class Main {
             if (scan.hasNextInt()) {
                 currentValue = scan.nextInt();
                 if (currentValue > 0 && currentValue <= maxNum)
-                    loop = false; // Only via here the loop stops
+                    loop = false; // Only via here, the loop stops
                 else
                     System.out.println("Must be maximum " + maxNum);
             } else { // If input is not digits

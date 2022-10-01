@@ -14,14 +14,23 @@
         <class>entity.Booking</class>
 
         <properties>
-            <!--Driver for database -->
+            <!--Driver for database / SQL dialect -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 
             <!-- Url to database -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/wigellsconcert?serverTimezone=UTC"/>
+
+            <!-- Enter db server user and password -->
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="*********"/> <!-- Enter db password -->
-            <property name="hibernate.show_sql" value="false"/> <!-- Display or don't display query in console -->
+            <property name="javax.persistence.jdbc.password" value="****"/>
+
+            <!-- Echo all executed SQL to standard output -->
+            <property name="hibernate.show_sql" value="false"/>
+
+            <!-- Flush cache and, -->
+            <!-- Drop/re-create db schema on startup with create; see also update, create-drop, etc-->
+            <property name="hibernate.flushMode" value="FLUSH_AUTO" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
 
         </properties>
     </persistence-unit>

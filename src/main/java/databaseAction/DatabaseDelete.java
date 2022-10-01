@@ -10,7 +10,7 @@ public class DatabaseDelete {
     private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
 
     public void deleteData() {
-        System.out.println("What to edit/update:");
+        System.out.println("What to delete:");
         System.out.println("1. Remove record\n2. Empty table");
         int userChoice = Main.validateUserIntegerChoice(2);
         switch (userChoice) {
