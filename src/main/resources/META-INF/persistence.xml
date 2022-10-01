@@ -20,7 +20,7 @@
             <!-- Url to database -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/wigellsconcert?serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="******/> <!-- Enter db password -->
+            <property name="javax.persistence.jdbc.password" value="*********"/> <!-- Enter db password -->
             <property name="hibernate.show_sql" value="false"/> <!-- Display or don't display query in console -->
 
         </properties>

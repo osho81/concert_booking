@@ -54,7 +54,8 @@ CREATE TABLE `arena` (
   `arena_id` int NOT NULL AUTO_INCREMENT,
   `arena_name` varchar(45) DEFAULT NULL,
   `arena_address` int DEFAULT NULL,
-  `outside` set('yes','no') NOT NULL,
+#   `outside` set('yes','no') NOT NULL,
+  `indoor_outdoor` set('outdoor','indoor') NOT NULL,
   PRIMARY KEY (`arena_id`),
   KEY `address_id_idx` (`arena_address`),
   CONSTRAINT `fk_arena_address` FOREIGN KEY (`arena_address`) REFERENCES `address` (`address_id`) ON DELETE SET NULL ON UPDATE SET NULL
